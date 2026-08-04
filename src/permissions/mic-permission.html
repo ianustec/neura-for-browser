@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neura — Permesso microfono</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --accent: #11a37f;
+        --bg: #0f172a;
+        --card: #1e293b;
+        --text: #f8fafc;
+        --muted: #94a3b8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(1200px 600px at 20% 0%, #134e4a 0%, var(--bg) 55%);
+        color: var(--text);
+        padding: 24px;
+      }
+      html.embed body {
+        min-height: auto;
+        display: block;
+        padding: 0;
+        background: transparent;
+      }
+      .card {
+        width: min(440px, 100%);
+        background: color-mix(in srgb, var(--card) 92%, transparent);
+        border: 1px solid color-mix(in srgb, #fff 10%, transparent);
+        border-radius: 16px;
+        padding: 28px 24px;
+        box-shadow: 0 20px 50px rgb(0 0 0 / 35%);
+      }
+      html.embed .card {
+        width: 100%;
+        box-shadow: none;
+        border: 0;
+        padding: 0;
+        background: transparent;
+      }
+      h1 { margin: 0 0 8px; font-size: 1.35rem; }
+      p { margin: 0 0 16px; color: var(--muted); line-height: 1.5; font-size: 0.95rem; }
+      button {
+        appearance: none;
+        border: 0;
+        border-radius: 10px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 600;
+        padding: 12px 16px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 0.95rem;
+      }
+      button:disabled { opacity: 0.6; cursor: default; }
+      #status { margin-top: 14px; font-size: 0.9rem; min-height: 1.4em; }
+      .ok { color: #6ee7b7; }
+      .err { color: #fca5a5; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <h1>Permesso microfono</h1>
+      <p>
+        Neura ha bisogno del microfono per la Dettatura.
+        Clicca il pulsante e concedi l’accesso quando Chrome lo richiede.
+      </p>
+      <button id="grant" type="button">Consenti microfono</button>
+      <div id="status" role="status"></div>
+    </main>
+    <script src="mic-permission.js"></script>
+  </body>
+</html>

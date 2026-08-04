@@ -1,0 +1,15 @@
+{
+  "name": "neura-for-browser",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NEURA for Browser \u2014 AI-powered browser extension with contextual chat via OpenWebUI",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ianustec/neura-for-browser.git"
+  },
+  "devDependencies": {
+    "docx": "^9.7.1",
+    "esbuild": "^0.28.1"
+  },
+  "license": "SEE LICENSE IN LICENSE"
+}

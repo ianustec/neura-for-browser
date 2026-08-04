@@ -1,0 +1,139 @@
+{
+  "manifest_version": 3,
+  "name": "NEURA for Browser",
+  "version": "1.0",
+  "description": "AI assistant powered by Neura - Get instant help on any webpage with contextual chat and access to company knowledge",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "downloads",
+    "alarms",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "https://your-openwebui-server.example/*",
+    "https://docs.google.com/*",
+    "<all_urls>"
+  ],
+  "action": {},
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content/utils/namespace.js",
+        "src/content/modules/debug-log.js",
+        "src/content/utils/dom.js",
+        "src/content/utils/shadow.js",
+        "src/content/state.js",
+        "src/content/modules/sidebar-layout.js",
+        "src/content/modules/capture-mode.js",
+        "src/content/modules/panel-resize.js",
+        "src/content/modules/local-chats.js",
+        "src/content/modules/session.js",
+        "src/content/modules/markdown.js",
+        "src/content/modules/i18n.js",
+        "src/content/modules/reasoning-splitter.js",
+        "src/content/modules/content-partition.js",
+        "src/content/modules/owui-output-ui.js",
+        "src/content/modules/theme.js",
+        "src/content/modules/branding.js",
+        "src/content/modules/model-icons.js",
+        "src/content/modules/page-context.js",
+        "src/content/modules/frame-aggregation.js",
+        "src/content/handlers/focus.js",
+        "src/content/handlers/keyboard-isolation.js",
+        "src/content/handlers/shortcuts.js",
+        "src/content/ui/messages.js",
+        "src/content/ui/agent-log.js",
+        "src/content/handlers/streaming.js",
+        "src/content/handlers/turn-rejoin.js",
+        "src/content/handlers/message-actions.js",
+        "src/content/ui/input.js",
+        "src/content/ui/chat-sidebar.js",
+        "src/content/modules/models-list.js",
+        "src/content/modules/voice-session.js",
+        "src/content/modules/neura-animation-player.js",
+        "src/content/modules/voice-chat-slot.js",
+        "src/content/ui/voice-overlay.js",
+        "src/content/modules/voice-mode.js",
+        "src/content/ui/voice-controls.js",
+        "src/content/ui/chat-window.js",
+        "src/content/ui/model-mention.js",
+        "src/content/ui/file-attachments.js",
+        "src/content/ui/hash-mention.js",
+        "src/content/ui/prompt-mention.js",
+        "src/content/ui/notes-panel.js",
+        "src/content/ui/mic-permission-modal.js",
+        "src/content/ui/settings-overlay.js",
+        "src/content/modules/icon-drag.js",
+        "library/prism/prism.js",
+        "src/content/agent/page-tools.js",
+        "src/content/agent/index.js",
+        "src/content/index.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_end",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    },
+    {
+      "resources": [
+        "assets/voice/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    },
+    {
+      "resources": [
+        "styles.css",
+        "styles-owui.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    },
+    {
+      "resources": [
+        "src/permissions/mic-permission.html",
+        "src/permissions/mic-permission.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    },
+    {
+      "resources": [
+        "fonts/MarsBold/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

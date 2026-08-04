@@ -1,0 +1,33 @@
+{
+  "schema": "neuraAnimationConfig",
+  "version": 1,
+  "name": "neura-default",
+  "exportedAt": "2026-07-31T19:58:38.585Z",
+  "asset": {
+    "svg": "neura-mark.svg",
+    "viewBox": "0 0 839.57 839.57"
+  },
+  "playback": {
+    "mode": "speak",
+    "intensity": 0.7,
+    "speed": 1
+  },
+  "rotation": {
+    "planeZ_degPerSec": 118,
+    "verticalY_degPerSec": 0,
+    "horizontalX_degPerSec": 0,
+    "maxTiltXY_deg": 20,
+    "perspectivePx": 900
+  },
+  "motion": {
+    "pulse": 0.11,
+    "strokeBaseWidth": 5,
+    "historyLen": 90
+  },
+  "layers": {
+    "tracciato": "unified group #tracciato (line + gradient)",
+    "letterN": "unified group #letterN",
+    "backgroundGlows": "independent",
+    "sphereFill": "static"
+  }
+}
