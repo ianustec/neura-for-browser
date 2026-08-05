@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+.cursor/
+
+# Secrets & local env
+.env
+.env.*
+*.pem
+*.key
+
+# Build / packaging artifacts
+*.crx
+*.zip
+dist/
+build/
+*.log
+
+# Local packaging / publish tooling (not part of the public tree)
+scripts/
+PUBLISH.md
+
+# Local-only notes
+*.local.md
